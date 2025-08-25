@@ -1,4 +1,4 @@
-# Manash Protim Deori - Personal Portfolio
+# MY-PORTFOLIO
 
 A dynamic, modern, and visually appealing personal portfolio website built with Angular and Node.js.
 
