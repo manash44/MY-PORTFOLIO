@@ -1,0 +1,4 @@
+# Redirects for Angular SPA
+# This ensures that all routes fall back to index.html for client-side routing
+
+/*    /index.html   200
