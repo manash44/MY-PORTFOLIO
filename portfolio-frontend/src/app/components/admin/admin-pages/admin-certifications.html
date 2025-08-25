@@ -1,0 +1,71 @@
+<div class="admin-certifications">
+  <div class="page-header">
+    <h3>Manage Certifications</h3>
+    <p>Add, edit, and manage your professional certifications</p>
+  </div>
+
+  <!-- Add New Certification Form -->
+  <div class="add-certification-form">
+    <h4>Add New Certification</h4>
+    
+    <div class="form-grid">
+      <div class="form-group">
+        <label>Certification Name</label>
+        <input [(ngModel)]="newCertification.name" class="form-control" placeholder="e.g., Cybersecurity Essentials">
+      </div>
+      
+      <div class="form-group">
+        <label>Issuing Organization</label>
+        <input [(ngModel)]="newCertification.issuer" class="form-control" placeholder="e.g., Cisco Networking Academy">
+      </div>
+      
+      <div class="form-group">
+        <label>Year Obtained</label>
+        <input [(ngModel)]="newCertification.year" class="form-control" placeholder="e.g., 2023">
+      </div>
+      
+      <div class="form-group">
+        <label>Certification Image</label>
+        <input type="file" (change)="onImageUpload($event)" accept="image/*" class="form-control">
+        <small>Upload certification badge or logo</small>
+      </div>
+      
+      <div class="form-group">
+        <label>Image URL (or upload above)</label>
+        <input [(ngModel)]="newCertification.image" class="form-control" placeholder="https://example.com/cert-badge.jpg">
+      </div>
+    </div>
+    
+    <div class="form-actions">
+      <button (click)="addCertification()" class="btn btn-primary">Add Certification</button>
+      <button (click)="resetForm()" class="btn btn-outline">Reset Form</button>
+    </div>
+  </div>
+
+  <!-- Existing Certifications -->
+  <div class="existing-certifications">
+    <h4>Existing Certifications</h4>
+    
+    <div class="certifications-grid">
+      <div *ngFor="let cert of certifications; let i = index" class="certification-card">
+        <div class="certification-image">
+          <img [src]="cert.image || '/assets/images/cert-placeholder.jpg'" [alt]="cert.name">
+        </div>
+        
+        <div class="certification-details">
+          <h5>{{ cert.name }}</h5>
+          <p><strong>Issuer:</strong> {{ cert.issuer }}</p>
+          <p><strong>Year:</strong> {{ cert.year }}</p>
+        </div>
+        
+        <div class="certification-actions">
+          <button (click)="removeCertification(i)" class="btn btn-danger">Remove</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="save-section">
+    <button (click)="saveCertifications()" class="btn btn-primary btn-large">Save All Changes</button>
+  </div>
+</div>

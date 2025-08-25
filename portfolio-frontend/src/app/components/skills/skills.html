@@ -1,0 +1,127 @@
+<section id="skills" class="skills">
+  <div class="container">
+    <div class="section-title">
+      <h2>Skills & Expertise</h2>
+      <p>Comprehensive technical and soft skills across multiple domains</p>
+    </div>
+    
+    <div class="skills-content">
+      <div class="skill-categories">
+        <div class="category-header">
+          <h3>{{ getActiveCategoryName() }}</h3>
+        </div>
+        
+        <div class="category-tabs">
+          <button 
+            *ngFor="let category of skillCategories" 
+            class="category-tab"
+            [class.active]="activeCategory === category.id"
+            (click)="setActiveCategory(category.id)">
+            <i [class]="category.icon"></i>
+            <span>{{ category.name }}</span>
+          </button>
+        </div>
+      </div>
+      
+      <div class="skills-display">
+        <div class="skills-grid">
+          <div 
+            *ngFor="let skill of getSkillsByCategory(activeCategory)" 
+            class="skill-item"
+            (click)="showSkillDetail(skill)">
+            
+            <div class="skill-header">
+              <i [class]="skill.icon"></i>
+              <h4>{{ skill.name }}</h4>
+            </div>
+            
+            <div class="skill-progress">
+              <div class="progress-bar">
+                <div class="progress-fill" [style.width.%]="skill.level"></div>
+              </div>
+              <span class="skill-level">{{ skill.level }}%</span>
+            </div>
+            
+            <div class="skill-experience">
+              <span class="experience-badge">{{ skill.experience }}</span>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Skill Details Panel -->
+        <div class="skill-details-panel" *ngIf="selectedSkill && showSkillDetails">
+          <div class="skill-detail-card">
+            <div class="detail-header">
+              <i [class]="selectedSkill.icon"></i>
+              <h3>{{ selectedSkill.name }}</h3>
+              <button class="close-btn" (click)="hideSkillDetail()">
+                <i class="fas fa-times"></i>
+              </button>
+            </div>
+            
+            <div class="detail-content">
+              <div class="detail-section">
+                <h4>Description</h4>
+                <p>{{ selectedSkill.description }}</p>
+              </div>
+              
+              <div class="detail-section">
+                <h4>Experience Level</h4>
+                <div class="experience-info">
+                  <span class="experience-badge large">{{ selectedSkill.experience }}</span>
+                  <div class="skill-progress-detailed">
+                    <div class="progress-bar">
+                      <div class="progress-fill" [style.width.%]="selectedSkill.level"></div>
+                    </div>
+                    <span class="skill-level">{{ selectedSkill.level }}% Proficiency</span>
+                  </div>
+                </div>
+              </div>
+              
+              <div class="detail-section">
+                <h4>Related Projects</h4>
+                <div class="projects-list">
+                  <div *ngFor="let project of selectedSkill.projects" class="project-item">
+                    <i class="fas fa-project-diagram"></i>
+                    <span>{{ project }}</span>
+                  </div>
+                </div>
+              </div>
+              
+              <div class="detail-section">
+                <h4>Key Capabilities</h4>
+                <div class="capabilities-list">
+                  <div *ngFor="let project of selectedSkill.projects.slice(0, 3)" class="capability-item">
+                    <i class="fas fa-check-circle"></i>
+                    <span>{{ project }}</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    <!-- Skills Summary -->
+    <div class="skills-summary">
+      <div class="summary-card">
+        <h3>Skills Overview</h3>
+        <div class="summary-stats">
+          <div class="stat-item">
+            <div class="stat-number">{{ skills.length }}</div>
+            <div class="stat-label">Total Skills</div>
+          </div>
+          <div class="stat-item">
+            <div class="stat-number">{{ skillCategories.length }}</div>
+            <div class="stat-label">Categories</div>
+          </div>
+          <div class="stat-item">
+            <div class="stat-number">4+</div>
+            <div class="stat-label">Years Experience</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

@@ -1,0 +1,127 @@
+<div class="admin-editor">
+  <div class="editor-tabs">
+    <button 
+      [class.active]="activeTab === 'profile'"
+      (click)="activeTab = 'profile'"
+      class="tab-btn">
+      Profile
+    </button>
+    <button 
+      [class.active]="activeTab === 'experience'"
+      (click)="activeTab = 'experience'"
+      class="tab-btn">
+      Experience
+    </button>
+    <button 
+      [class.active]="activeTab === 'projects'"
+      (click)="activeTab = 'projects'"
+      class="tab-btn">
+      Projects
+    </button>
+    <button 
+      [class.active]="activeTab === 'skills'"
+      (click)="activeTab = 'skills'"
+      class="tab-btn">
+      Skills
+    </button>
+    <button 
+      [class.active]="activeTab === 'certifications'"
+      (click)="activeTab = 'certifications'"
+      class="tab-btn">
+      Certifications
+    </button>
+  </div>
+
+  <div class="editor-content">
+    <!-- Profile Tab -->
+    <div *ngIf="activeTab === 'profile' && profile" class="tab-content">
+      <h3>Edit Profile</h3>
+      <div class="form-group">
+        <label>Name</label>
+        <input [(ngModel)]="profile.name" class="form-control">
+      </div>
+      <div class="form-group">
+        <label>Title</label>
+        <input [(ngModel)]="profile.title" class="form-control">
+      </div>
+      <div class="form-group">
+        <label>Summary</label>
+        <textarea [(ngModel)]="profile.summary" class="form-control" rows="4"></textarea>
+      </div>
+      <div class="form-group">
+        <label>Email</label>
+        <input [(ngModel)]="profile.email" class="form-control">
+      </div>
+      <div class="form-group">
+        <label>Phone</label>
+        <input [(ngModel)]="profile.phone" class="form-control">
+      </div>
+      <div class="form-group">
+        <label>Address</label>
+        <input [(ngModel)]="profile.address" class="form-control">
+      </div>
+      <button (click)="saveProfile()" class="btn btn-primary">Save Profile</button>
+    </div>
+
+    <!-- Experience Tab -->
+    <div *ngIf="activeTab === 'experience'" class="tab-content">
+      <h3>Edit Experience</h3>
+      <div *ngFor="let exp of experience; let i = index" class="experience-item">
+        <div class="form-group">
+          <label>Title</label>
+          <input [(ngModel)]="exp.title" class="form-control">
+        </div>
+        <div class="form-group">
+          <label>Company</label>
+          <input [(ngModel)]="exp.company" class="form-control">
+        </div>
+        <div class="form-group">
+          <label>Period</label>
+          <input [(ngModel)]="exp.period" class="form-control">
+        </div>
+        <div class="form-group">
+          <label>Description</label>
+          <textarea [(ngModel)]="exp.description" class="form-control" rows="3"></textarea>
+        </div>
+        <button (click)="removeExperience(i)" class="btn btn-danger">Remove</button>
+      </div>
+      <button (click)="addExperience()" class="btn btn-outline">Add Experience</button>
+      <button (click)="saveExperience()" class="btn btn-primary">Save Experience</button>
+    </div>
+
+    <!-- Skills Tab -->
+    <div *ngIf="activeTab === 'skills' && skills" class="tab-content">
+      <h3>Edit Skills</h3>
+      <div class="skills-section">
+        <h4>Programming Languages</h4>
+        <div *ngFor="let skill of skills.programming" class="skill-item">
+          <input [(ngModel)]="skill.name" class="form-control" placeholder="Skill name">
+          <input [(ngModel)]="skill.level" type="number" class="form-control" placeholder="Level (0-100)">
+        </div>
+      </div>
+      <button (click)="saveSkills()" class="btn btn-primary">Save Skills</button>
+    </div>
+
+    <!-- Certifications Tab -->
+    <div *ngIf="activeTab === 'certifications'" class="tab-content">
+      <h3>Edit Certifications</h3>
+      <div *ngFor="let cert of certifications; let i = index" class="certification-item">
+        <div class="form-group">
+          <label>Name</label>
+          <input [(ngModel)]="cert.name" class="form-control">
+        </div>
+        <div class="form-group">
+          <label>Issuer</label>
+          <input [(ngModel)]="cert.issuer" class="form-control">
+        </div>
+        <div class="form-group">
+          <label>Year</label>
+          <input [(ngModel)]="cert.year" class="form-control">
+        </div>
+        <button (click)="removeCertification(i)" class="btn btn-danger">Remove</button>
+      </div>
+      <button (click)="addCertification()" class="btn btn-outline">Add Certification</button>
+      <button (click)="saveCertifications()" class="btn btn-primary">Save Certifications</button>
+    </div>
+  </div>
+</div>

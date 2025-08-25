@@ -1,0 +1,83 @@
+<header class="header">
+  <nav class="navbar">
+    <div class="container">
+      <div class="nav-brand">
+        <a href="#home" class="brand-link" (click)="scrollToSection('home'); $event.preventDefault()">
+          <span class="brand-text">Manash Deori</span>
+        </a>
+      </div>
+      
+      <div class="nav-menu" [class.active]="isMenuOpen">
+        <ul class="nav-list">
+          <li class="nav-item">
+            <a href="#home" 
+               class="nav-link hover-zoom" 
+               [class.active]="activeSection === 'home'"
+               (click)="scrollToSection('home'); $event.preventDefault()">
+              Home
+            </a>
+          </li>
+          <li class="nav-item">
+            <a href="#about" 
+               class="nav-link hover-zoom" 
+               [class.active]="activeSection === 'about'"
+               (click)="scrollToSection('about'); $event.preventDefault()">
+              About
+            </a>
+          </li>
+          <li class="nav-item">
+            <a href="#experience" 
+               class="nav-link hover-zoom" 
+               [class.active]="activeSection === 'experience'"
+               (click)="scrollToSection('experience'); $event.preventDefault()">
+              Experience
+            </a>
+          </li>
+          <li class="nav-item">
+            <a href="#projects" 
+               class="nav-link hover-zoom" 
+               [class.active]="activeSection === 'projects'"
+               (click)="scrollToSection('projects'); $event.preventDefault()">
+              Projects
+            </a>
+          </li>
+          <li class="nav-item">
+            <a href="#skills" 
+               class="nav-link hover-zoom" 
+               [class.active]="activeSection === 'skills'"
+               (click)="scrollToSection('skills'); $event.preventDefault()">
+              Skills
+            </a>
+          </li>
+          <li class="nav-item">
+            <a href="#education" 
+               class="nav-link hover-zoom" 
+               [class.active]="activeSection === 'education'"
+               (click)="scrollToSection('education'); $event.preventDefault()">
+              Education
+            </a>
+          </li>
+          <li class="nav-item">
+            <a href="#contact" 
+               class="nav-link hover-zoom" 
+               [class.active]="activeSection === 'contact'"
+               (click)="scrollToSection('contact'); $event.preventDefault()">
+              Contact
+            </a>
+          </li>
+        </ul>
+      </div>
+      
+      <button 
+        class="nav-toggle" 
+        (click)="toggleMenu()" 
+        (keydown.enter)="toggleMenu()" 
+        (keydown.space)="toggleMenu()"
+        type="button"
+        aria-label="Toggle navigation menu"
+        aria-expanded="{{ isMenuOpen }}">
+        <span class="hamburger" [class.active]="isMenuOpen"></span>
+      </button>
+    </div>
+  </nav>
+</header>

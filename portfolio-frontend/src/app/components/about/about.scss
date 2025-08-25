@@ -1,0 +1,240 @@
+.about {
+  background: var(--white);
+  position: relative;
+}
+
+.about-content {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--spacing-4xl);
+  align-items: start;
+}
+
+.about-text {
+  .about-text h3 {
+    font-size: 2rem;
+    color: var(--primary-green);
+    margin-bottom: var(--spacing-xl);
+    font-weight: 600;
+  }
+  
+  p {
+    font-size: 1.1rem;
+    line-height: 1.7;
+    color: var(--gray);
+    margin-bottom: var(--spacing-lg);
+    
+    &:last-of-type {
+      margin-bottom: var(--spacing-2xl);
+    }
+  }
+}
+
+.about-highlights {
+  display: grid;
+  gap: var(--spacing-xl);
+  
+  .highlight-item {
+    display: flex;
+    align-items: flex-start;
+    gap: var(--spacing-lg);
+    padding: var(--spacing-lg);
+    background: var(--light-gray);
+    border-radius: var(--border-radius);
+    transition: var(--transition);
+    
+    &:hover {
+      transform: translateY(-2px);
+      box-shadow: var(--shadow);
+    }
+    
+    .highlight-icon {
+      font-size: var(--icon-xl);
+      flex-shrink: 0;
+      margin-top: var(--spacing-xs);
+    }
+    
+    .highlight-content {
+      h4 {
+        font-size: 1.2rem;
+        color: var(--primary-green);
+        margin-bottom: var(--spacing-sm);
+        font-weight: 600;
+      }
+      
+      p {
+        color: var(--gray);
+        line-height: 1.6;
+        margin-bottom: 0;
+      }
+    }
+  }
+}
+
+.about-details {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-xl);
+  
+  .glass-card {
+    h3 {
+      font-size: 1.5rem;
+      color: var(--primary-green);
+      margin-bottom: var(--spacing-xl);
+      font-weight: 600;
+    }
+  }
+}
+
+.education-item {
+  display: flex;
+  gap: var(--spacing-lg);
+  margin-bottom: var(--spacing-xl);
+  
+  &:last-child {
+    margin-bottom: 0;
+  }
+  
+  .education-year {
+    font-weight: 600;
+    color: var(--primary-green);
+    font-size: 0.9rem;
+    background: rgba(46, 125, 50, 0.1);
+    padding: var(--spacing-xs) var(--spacing-md);
+    border-radius: 20px;
+    height: fit-content;
+    white-space: nowrap;
+  }
+  
+  .education-content {
+    h4 {
+      font-size: 1.1rem;
+      color: var(--black);
+      margin-bottom: var(--spacing-xs);
+      font-weight: 600;
+    }
+    
+    p {
+      color: var(--gray);
+      font-size: 0.95rem;
+      margin-bottom: var(--spacing-xs);
+      
+      &:last-child {
+        margin-bottom: 0;
+      }
+    }
+  }
+}
+
+.achievements-list {
+  list-style: none;
+  
+  li {
+    position: relative;
+    padding-left: var(--spacing-xl);
+    margin-bottom: var(--spacing-md);
+    color: var(--gray);
+    line-height: 1.6;
+    
+    &:last-child {
+      margin-bottom: 0;
+    }
+    
+    &::before {
+      content: '✓';
+      position: absolute;
+      left: 0;
+      top: 0;
+      color: var(--primary-green);
+      font-weight: bold;
+      font-size: var(--icon-sm);
+    }
+  }
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+  .about-content {
+    grid-template-columns: 1fr;
+    gap: var(--spacing-3xl);
+  }
+}
+
+@media (max-width: 768px) {
+  .about-content {
+    gap: var(--spacing-2xl);
+  }
+  
+  .about-text {
+    h3 {
+      font-size: 1.75rem;
+    }
+    
+    p {
+      font-size: 1rem;
+    }
+  }
+  
+  .about-highlights {
+    gap: var(--spacing-lg);
+    
+    .highlight-item {
+      gap: var(--spacing-md);
+      padding: var(--spacing-md);
+      
+      .highlight-icon {
+        font-size: var(--icon-lg);
+      }
+      
+      .highlight-content h4 {
+        font-size: 1.1rem;
+      }
+    }
+  }
+  
+  .about-details {
+    gap: var(--spacing-lg);
+    
+    .glass-card h3 {
+      font-size: 1.3rem;
+      margin-bottom: var(--spacing-lg);
+    }
+  }
+  
+  .education-item {
+    gap: var(--spacing-md);
+    margin-bottom: var(--spacing-lg);
+    
+    .education-year {
+      font-size: 0.8rem;
+      padding: var(--spacing-xs) var(--spacing-sm);
+    }
+    
+    .education-content h4 {
+      font-size: 1rem;
+    }
+  }
+}
+
+@media (max-width: 480px) {
+  .about-highlights {
+    .highlight-item {
+      flex-direction: column;
+      text-align: center;
+      gap: var(--spacing-sm);
+      
+      .highlight-icon {
+        margin-top: 0;
+      }
+    }
+  }
+  
+  .education-item {
+    flex-direction: column;
+    gap: var(--spacing-sm);
+    
+    .education-year {
+      align-self: flex-start;
+    }
+  }
+}

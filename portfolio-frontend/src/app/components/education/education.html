@@ -1,0 +1,98 @@
+<section id="education" class="education">
+  <div class="container">
+    <div class="section-title">
+      <h2>Education & Certifications</h2>
+      <p>Academic background and professional development</p>
+    </div>
+    
+    <div class="education-content">
+      <!-- Formal Education -->
+      <div class="education-section">
+        <h3>Formal Education</h3>
+        <div class="education-cards">
+          <div *ngFor="let edu of education" class="education-card">
+            <div class="education-header">
+              <div class="education-icon">
+                <i [class]="edu.icon"></i>
+              </div>
+              <div class="education-info">
+                <h4>{{ edu.degree }}</h4>
+                <p class="institution">{{ edu.institution }}</p>
+                <p class="duration">{{ edu.duration }}</p>
+                <div class="cgpa-badge">
+                  <span>CGPA: {{ edu.cgpa }}</span>
+                </div>
+              </div>
+            </div>
+            
+            <div class="education-description">
+              <p>{{ edu.description }}</p>
+            </div>
+            
+            <div class="education-highlights">
+              <h5>Key Areas of Study:</h5>
+              <div class="highlights-grid">
+                <div *ngFor="let highlight of edu.highlights" class="highlight-item">
+                  <i class="fas fa-check-circle"></i>
+                  <span>{{ highlight }}</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <!-- Certifications -->
+      <div class="certifications-section">
+        <h3>Professional Certifications</h3>
+        <div class="certifications-grid">
+          <div *ngFor="let cert of certifications" class="certification-card">
+            <div class="certification-header">
+              <div class="certification-icon">
+                <i [class]="cert.icon"></i>
+              </div>
+              <div class="certification-info">
+                <h4>{{ cert.name }}</h4>
+                <p class="issuer">{{ cert.issuer }}</p>
+                <p class="date">{{ cert.date }}</p>
+              </div>
+            </div>
+            
+            <div class="certification-description">
+              <p>{{ cert.description }}</p>
+            </div>
+            
+            <div class="certification-tags">
+              <span *ngFor="let tag of cert.tags" class="tag">{{ tag }}</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    <!-- Education Summary -->
+    <div class="education-summary">
+      <div class="summary-card">
+        <h3>Educational Journey</h3>
+        <div class="summary-stats">
+          <div class="stat-item">
+            <div class="stat-number">{{ education.length }}</div>
+            <div class="stat-label">Degrees</div>
+          </div>
+          <div class="stat-item">
+            <div class="stat-number">{{ certifications.length }}</div>
+            <div class="stat-label">Certifications</div>
+          </div>
+          <div class="stat-item">
+            <div class="stat-number">4</div>
+            <div class="stat-label">Years of Study</div>
+          </div>
+          <div class="stat-item">
+            <div class="stat-number">7.55</div>
+            <div class="stat-label">CGPA</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

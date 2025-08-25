@@ -1,0 +1,44 @@
+<app-header></app-header>
+
+<main>
+  <app-hero></app-hero>
+  <app-about></app-about>
+  <app-experience></app-experience>
+  <app-projects></app-projects>
+  <app-skills></app-skills>
+  <app-education></app-education>
+  <app-contact></app-contact>
+</main>
+
+<app-footer></app-footer>
+
+<!-- Admin Panel Info -->
+<div class="admin-info" *ngIf="showAdminInfo">
+  <div class="admin-info-card">
+    <h3>Admin Panel Access</h3>
+    <p><strong>To open admin panel:</strong> Press 'F' key on your keyboard</p>
+    <p><strong>To close admin panel:</strong> Press 'Escape' key</p>
+    <p><strong>Default Login:</strong></p>
+    <ul>
+      <li><strong>Username:</strong> admin</li>
+      <li><strong>Password:</strong> admin123</li>
+    </ul>
+    <button class="btn btn-primary" (click)="hideAdminInfo()">Got it!</button>
+  </div>
+</div>
+
+<!-- Scroll to top button -->
+<button 
+  class="scroll-to-top" 
+  (click)="scrollToTop()"
+  [class.visible]="showScrollToTop"
+  aria-label="Scroll to top">
+  <i class="fas fa-chevron-up"></i>
+</button>
+
+<app-admin-login 
+  *ngIf="showAdminPanel" 
+  (logout)="onAdminLogout()">
+</app-admin-login>
+
+<app-chatbot></app-chatbot>

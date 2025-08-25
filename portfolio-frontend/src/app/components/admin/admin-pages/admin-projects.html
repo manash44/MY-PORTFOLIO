@@ -1,0 +1,190 @@
+<div class="admin-projects">
+  <h3>Manage Projects</h3>
+
+  <div class="tabs">
+    <button 
+      [class.active]="activeTab === 'academic'"
+      (click)="activeTab = 'academic'"
+      class="tab-btn">
+      Academic Projects
+    </button>
+    <button 
+      [class.active]="activeTab === 'personal'"
+      (click)="activeTab = 'personal'"
+      class="tab-btn">
+      Personal Projects
+    </button>
+  </div>
+
+  <!-- Add New Project Form -->
+  <div class="add-project-form">
+    <h4>Add New {{ activeTab === 'academic' ? 'Academic' : 'Personal' }} Project</h4>
+    
+    <div class="form-grid">
+      <div class="form-group">
+        <label>Project Name *</label>
+        <input [(ngModel)]="newProject.name" class="form-control" placeholder="Enter project name">
+      </div>
+      
+      <div class="form-group">
+        <label>Short Description *</label>
+        <textarea [(ngModel)]="newProject.shortDescription" class="form-control" rows="2" placeholder="Brief project description"></textarea>
+      </div>
+      
+      <div class="form-group">
+        <label>Long Description</label>
+        <textarea [(ngModel)]="newProject.longDescription" class="form-control" rows="4" placeholder="Detailed project description"></textarea>
+      </div>
+      
+      <div class="form-group">
+        <label>Technologies (comma-separated) *</label>
+        <input [(ngModel)]="newProject.technologies" class="form-control" placeholder="e.g., Python, React, Node.js">
+      </div>
+      
+      <div class="form-group">
+        <label>Features (comma-separated)</label>
+        <input [(ngModel)]="newProject.features" class="form-control" placeholder="e.g., User authentication, Real-time updates">
+      </div>
+      
+      <div class="form-group">
+        <label>Software Specifications (comma-separated)</label>
+        <input [(ngModel)]="newProject.softwareSpecifications" class="form-control" placeholder="e.g., Android 8.0+, 3GB RAM">
+      </div>
+      
+      <div class="form-group">
+        <label>Project Status</label>
+        <select [(ngModel)]="newProject.status" class="form-control">
+          <option value="completed">Completed</option>
+          <option value="in-progress">In Progress</option>
+          <option value="planned">Planned</option>
+        </select>
+      </div>
+      
+      <div class="form-group">
+        <label>Start Date</label>
+        <input type="date" [(ngModel)]="newProject.startDate" class="form-control">
+      </div>
+      
+      <div class="form-group">
+        <label>End Date (optional)</label>
+        <input type="date" [(ngModel)]="newProject.endDate" class="form-control">
+      </div>
+      
+      <div class="form-group">
+        <label>Team Size</label>
+        <input type="number" [(ngModel)]="newProject.teamSize" class="form-control" min="1" value="1">
+      </div>
+      
+      <div class="form-group">
+        <label>Your Role</label>
+        <input [(ngModel)]="newProject.role" class="form-control" placeholder="e.g., Lead Developer, Frontend Developer">
+      </div>
+      
+      <div class="form-group">
+        <label>GitHub URL</label>
+        <input [(ngModel)]="newProject.links.github" class="form-control" placeholder="https://github.com/username/project">
+      </div>
+      
+      <div class="form-group">
+        <label>Live Demo URL</label>
+        <input [(ngModel)]="newProject.links.live" class="form-control" placeholder="https://project-demo.com">
+      </div>
+      
+      <div class="form-group">
+        <label>Demo Video URL</label>
+        <input [(ngModel)]="newProject.links.demo" class="form-control" placeholder="https://youtube.com/watch?v=...">
+      </div>
+      
+      <div class="form-group">
+        <label>Documentation URL</label>
+        <input [(ngModel)]="newProject.links.documentation" class="form-control" placeholder="https://project-docs.com">
+      </div>
+      
+      <div class="form-group">
+        <label>Project Image</label>
+        <input type="file" (change)="onImageUpload($event)" accept="image/*" class="form-control">
+        <small>Upload a project screenshot or logo</small>
+      </div>
+      
+      <div class="form-group">
+        <label>Image URL (or upload above)</label>
+        <input [(ngModel)]="newProject.image" class="form-control" placeholder="https://example.com/image.jpg">
+      </div>
+    </div>
+    
+    <div class="form-actions">
+      <button (click)="addProject()" class="btn btn-primary">Add Project</button>
+      <button (click)="resetForm()" class="btn btn-outline">Reset Form</button>
+    </div>
+  </div>
+
+  <!-- Existing Projects -->
+  <div class="existing-projects">
+    <h4>Existing {{ activeTab === 'academic' ? 'Academic' : 'Personal' }} Projects</h4>
+    
+    <div class="projects-grid">
+      <div *ngFor="let project of (activeTab === 'academic' ? projects?.academic : projects?.personal); let i = index" class="project-card">
+        <div class="project-image">
+          <img [src]="project.image || '/assets/images/project-placeholder.jpg'" [alt]="project.name">
+          <div class="project-status" [class]="project.status">
+            {{ project.status | titlecase }}
+          </div>
+        </div>
+        
+        <div class="project-details">
+          <h5>{{ project.name }}</h5>
+          <p>{{ project.shortDescription }}</p>
+          
+          <div class="project-meta">
+            <span class="meta-item">
+              <i class="fas fa-calendar"></i>
+              {{ project.startDate | date:'MMM yyyy' }} - 
+              {{ project.endDate ? (project.endDate | date:'MMM yyyy') : 'Present' }}
+            </span>
+            <span *ngIf="project.role" class="meta-item">
+              <i class="fas fa-user"></i>
+              {{ project.role }}
+            </span>
+          </div>
+          
+          <div class="project-tech">
+            <strong>Technologies:</strong>
+            <div class="tech-tags">
+              <span *ngFor="let tech of project.technologies" class="tech-tag">{{ tech }}</span>
+            </div>
+          </div>
+          
+          <div class="project-features" *ngIf="project.features?.length">
+            <strong>Features:</strong>
+            <ul>
+              <li *ngFor="let feature of project.features">{{ feature }}</li>
+            </ul>
+          </div>
+          
+          <div class="project-links" *ngIf="project.links">
+            <strong>Links:</strong>
+            <div class="link-buttons">
+              <a *ngIf="project.links.github" [href]="project.links.github" target="_blank" class="link-btn github">
+                <i class="fab fa-github"></i> GitHub
+              </a>
+              <a *ngIf="project.links.live" [href]="project.links.live" target="_blank" class="link-btn live">
+                <i class="fas fa-external-link-alt"></i> Live
+              </a>
+              <a *ngIf="project.links.demo" [href]="project.links.demo" target="_blank" class="link-btn demo">
+                <i class="fas fa-play"></i> Demo
+              </a>
+            </div>
+          </div>
+        </div>
+        
+        <div class="project-actions">
+          <button (click)="removeProject(i)" class="btn btn-danger">Remove</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="save-section">
+    <button (click)="saveProjects()" class="btn btn-primary btn-large">Save All Changes</button>
+  </div>
+</div>

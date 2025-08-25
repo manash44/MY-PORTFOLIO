@@ -1,0 +1,145 @@
+<div class="modal-overlay" (click)="closeModal()">
+  <div class="modal-content" (click)="$event.stopPropagation()">
+    <!-- Close Button -->
+    <button class="close-btn" (click)="closeModal()" aria-label="Close modal">
+      <i class="fas fa-times"></i>
+    </button>
+
+    <!-- Project Header -->
+    <div class="project-header">
+      <div class="project-image-container">
+        <img 
+          [src]="project?.image || 'assets/images/project-placeholder.jpg'" 
+          [alt]="project?.name"
+          class="project-image"
+          (error)="onImageError($event)">
+        <div class="project-status" [class]="project?.status">
+          {{ project?.status | titlecase }}
+        </div>
+      </div>
+      
+      <div class="project-info">
+        <h2>{{ project?.name }}</h2>
+        <p class="project-category">{{ project?.category | titlecase }} Project</p>
+        <p class="project-period">
+          {{ project?.startDate | date:'MMM yyyy' }} - 
+          {{ project?.endDate ? (project?.endDate | date:'MMM yyyy') : 'Present' }}
+        </p>
+        <div class="project-meta">
+          <span *ngIf="project?.role" class="meta-item">
+            <i class="fas fa-user"></i> {{ project?.role }}
+          </span>
+          <span *ngIf="project?.teamSize" class="meta-item">
+            <i class="fas fa-users"></i> Team: {{ project?.teamSize }}
+          </span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Project Content -->
+    <div class="project-content">
+      <!-- Long Description -->
+      <div class="content-section">
+        <h3>Description</h3>
+        <p>{{ project?.longDescription }}</p>
+      </div>
+
+      <!-- Features -->
+      <div class="content-section" *ngIf="project?.features?.length">
+        <h3>Key Features</h3>
+        <ul class="features-list">
+          <li *ngFor="let feature of project?.features">
+            <i class="fas fa-check"></i>
+            {{ feature }}
+          </li>
+        </ul>
+      </div>
+
+      <!-- Software Specifications -->
+      <div class="content-section" *ngIf="project?.softwareSpecifications?.length">
+        <h3>Software Specifications</h3>
+        <ul class="specs-list">
+          <li *ngFor="let spec of project?.softwareSpecifications">
+            <i class="fas fa-cog"></i>
+            {{ spec }}
+          </li>
+        </ul>
+      </div>
+
+      <!-- Technologies -->
+      <div class="content-section">
+        <h3>Technologies Used</h3>
+        <div class="tech-tags">
+          <span 
+            *ngFor="let tech of project?.technologies" 
+            class="tech-tag">
+            {{ tech }}
+          </span>
+        </div>
+      </div>
+
+      <!-- Project Links -->
+      <div class="content-section" *ngIf="hasProjectLinks()">
+        <h3>Project Links</h3>
+        <div class="project-links">
+          <a 
+            *ngIf="project?.links?.github" 
+            [href]="project?.links?.github" 
+            target="_blank" 
+            class="project-link github">
+            <i class="fab fa-github"></i>
+            View on GitHub
+          </a>
+          
+          <a 
+            *ngIf="project?.links?.live" 
+            [href]="project?.links?.live" 
+            target="_blank" 
+            class="project-link live">
+            <i class="fas fa-external-link-alt"></i>
+            Live Demo
+          </a>
+          
+          <a 
+            *ngIf="project?.links?.demo" 
+            [href]="project?.links?.demo" 
+            target="_blank" 
+            class="project-link demo">
+            <i class="fas fa-play"></i>
+            Demo Video
+          </a>
+          
+          <a 
+            *ngIf="project?.links?.documentation" 
+            [href]="project?.links?.documentation" 
+            target="_blank" 
+            class="project-link docs">
+            <i class="fas fa-book"></i>
+            Documentation
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Modal Footer -->
+    <div class="modal-footer">
+      <button class="btn btn-secondary" (click)="closeModal()">
+        Close
+      </button>
+      <button 
+        *ngIf="project?.links?.github" 
+        class="btn btn-primary" 
+        (click)="openGitHub()">
+        <i class="fab fa-github"></i>
+        View Code
+      </button>
+      <button 
+        *ngIf="project?.links?.live" 
+        class="btn btn-success" 
+        (click)="openLiveDemo()">
+        <i class="fas fa-external-link-alt"></i>
+        Live Demo
+      </button>
+    </div>
+  </div>
+</div>

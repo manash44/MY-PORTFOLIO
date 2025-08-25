@@ -1,0 +1,67 @@
+<div class="admin-skills">
+  <div class="page-header">
+    <h3>Manage Skills</h3>
+    <p>Add, edit, and manage your technical and soft skills</p>
+  </div>
+
+  <!-- Skill Categories -->
+  <div class="skill-categories">
+    <button 
+      *ngFor="let category of skillCategories"
+      [class.active]="activeCategory === category.id"
+      (click)="activeCategory = category.id"
+      class="category-btn">
+      <span class="category-icon">{{ category.icon }}</span>
+      <span class="category-name">{{ category.name }}</span>
+    </button>
+  </div>
+
+  <!-- Add New Skill Form -->
+  <div class="add-skill-form">
+    <h4>Add New {{ getActiveCategoryName() }} Skill</h4>
+    
+    <div class="form-grid">
+      <div class="form-group">
+        <label>Skill Name</label>
+        <input [(ngModel)]="newSkill.name" class="form-control" placeholder="Enter skill name">
+      </div>
+      
+      <div class="form-group" *ngIf="activeCategory !== 'softSkills'">
+        <label>Skill Level (0-100)</label>
+        <input [(ngModel)]="newSkill.level" type="range" min="0" max="100" class="form-control range-input">
+        <span class="level-display">{{ newSkill.level }}%</span>
+      </div>
+    </div>
+    
+    <div class="form-actions">
+      <button (click)="addSkill()" class="btn btn-primary">Add Skill</button>
+      <button (click)="resetForm()" class="btn btn-outline">Reset Form</button>
+    </div>
+  </div>
+
+  <!-- Existing Skills Grid -->
+  <div class="existing-skills">
+    <h4>Existing {{ getActiveCategoryName() }} Skills</h4>
+    
+    <div class="skills-grid">
+      <div *ngFor="let skill of getCurrentSkills(); let i = index" class="skill-card">
+        <div class="skill-header">
+          <h5>{{ skill.name }}</h5>
+          <span class="skill-level" *ngIf="activeCategory !== 'softSkills'">{{ skill.level }}%</span>
+        </div>
+        
+        <div class="skill-bar" *ngIf="activeCategory !== 'softSkills'">
+          <div class="skill-progress" [style.width.%]="skill.level"></div>
+        </div>
+        
+        <div class="skill-actions">
+          <button (click)="removeSkill(skill.index)" class="btn btn-danger">Remove</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="save-section">
+    <button (click)="saveSkills()" class="btn btn-primary btn-large">Save All Changes</button>
+  </div>
+</div>

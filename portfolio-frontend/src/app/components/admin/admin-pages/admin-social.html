@@ -1,0 +1,68 @@
+<div class="admin-social">
+  <div class="page-header">
+    <h3>Manage Social Media Links</h3>
+    <p>Add and manage your social media profiles and contact links</p>
+  </div>
+
+  <div class="social-links-form">
+    <h4>Social Media & Contact Links</h4>
+    
+    <div class="form-grid">
+      <div class="form-group">
+        <label>LinkedIn Profile</label>
+        <input [(ngModel)]="socialLinks.linkedin" class="form-control" placeholder="https://linkedin.com/in/yourprofile">
+      </div>
+      
+      <div class="form-group">
+        <label>GitHub Profile</label>
+        <input [(ngModel)]="socialLinks.github" class="form-control" placeholder="https://github.com/yourusername">
+      </div>
+      
+      <div class="form-group">
+        <label>Twitter/X Profile</label>
+        <input [(ngModel)]="socialLinks.twitter" class="form-control" placeholder="https://twitter.com/yourusername">
+      </div>
+      
+      <div class="form-group">
+        <label>Instagram Profile</label>
+        <input [(ngModel)]="socialLinks.instagram" class="form-control" placeholder="https://instagram.com/yourusername">
+      </div>
+      
+      <div class="form-group">
+        <label>Facebook Profile</label>
+        <input [(ngModel)]="socialLinks.facebook" class="form-control" placeholder="https://facebook.com/yourprofile">
+      </div>
+      
+      <div class="form-group">
+        <label>YouTube Channel</label>
+        <input [(ngModel)]="socialLinks.youtube" class="form-control" placeholder="https://youtube.com/@yourchannel">
+      </div>
+      
+      <div class="form-group">
+        <label>Portfolio Website</label>
+        <input [(ngModel)]="socialLinks.portfolio" class="form-control" placeholder="https://yourportfolio.com">
+      </div>
+      
+      <div class="form-group">
+        <label>Email Address</label>
+        <input [(ngModel)]="socialLinks.email" type="email" class="form-control" placeholder="your.email@example.com">
+      </div>
+    </div>
+    
+    <div class="form-actions">
+      <button (click)="saveSocialLinks()" class="btn btn-primary">Save Social Links</button>
+      <button (click)="resetForm()" class="btn btn-outline">Reset Form</button>
+    </div>
+  </div>
+
+  <div class="preview-section">
+    <h4>Preview</h4>
+    <div class="social-preview">
+      <div *ngFor="let link of getSocialLinks()" class="social-item">
+        <span class="social-icon">{{ link.icon }}</span>
+        <span class="social-name">{{ link.name }}</span>
+        <span class="social-url">{{ link.url || 'Not set' }}</span>
+      </div>
+    </div>
+  </div>
+</div>

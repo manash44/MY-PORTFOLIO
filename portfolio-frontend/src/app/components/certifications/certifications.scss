@@ -1,0 +1,156 @@
+.certifications {
+  background: var(--white);
+  position: relative;
+}
+
+.certifications-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: var(--spacing-xl);
+}
+
+.certification-card {
+  background: var(--white);
+  border-radius: var(--border-radius);
+  overflow: hidden;
+  box-shadow: var(--shadow);
+  transition: all 0.3s ease;
+  
+  &:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--shadow-hover);
+  }
+  
+  .certification-image {
+    position: relative;
+    height: 200px;
+    overflow: hidden;
+    background: linear-gradient(135deg, var(--primary-green), var(--accent-green));
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.3s ease;
+    }
+    
+    &:hover img {
+      transform: scale(1.05);
+    }
+    
+    &::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: linear-gradient(45deg, transparent 30%, rgba(255, 255, 255, 0.1) 50%, transparent 70%);
+      animation: shimmer 3s infinite;
+    }
+  }
+  
+  .certification-content {
+    padding: var(--spacing-xl);
+    
+    h3 {
+      color: var(--primary-green);
+      margin-bottom: var(--spacing-md);
+      font-size: 1.2rem;
+      font-weight: 600;
+      line-height: 1.4;
+    }
+    
+    .certification-issuer {
+      color: var(--black);
+      font-weight: 500;
+      margin-bottom: var(--spacing-sm);
+      font-size: 1rem;
+    }
+    
+    .certification-year {
+      color: var(--gray);
+      font-size: 0.9rem;
+      background: rgba(46, 125, 50, 0.1);
+      padding: var(--spacing-xs) var(--spacing-md);
+      border-radius: 20px;
+      display: inline-block;
+    }
+  }
+}
+
+@keyframes shimmer {
+  0% {
+    transform: translateX(-100%);
+  }
+  100% {
+    transform: translateX(100%);
+  }
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+  .certifications-grid {
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: var(--spacing-lg);
+  }
+}
+
+@media (max-width: 768px) {
+  .certifications-grid {
+    grid-template-columns: 1fr;
+    gap: var(--spacing-lg);
+  }
+  
+  .certification-card {
+    .certification-image {
+      height: 180px;
+    }
+    
+    .certification-content {
+      padding: var(--spacing-lg);
+      
+      h3 {
+        font-size: 1.1rem;
+      }
+      
+      .certification-issuer {
+        font-size: 0.95rem;
+      }
+    }
+  }
+}
+
+@media (max-width: 480px) {
+  .certifications-grid {
+    gap: var(--spacing-md);
+  }
+  
+  .certification-card {
+    .certification-image {
+      height: 160px;
+    }
+    
+    .certification-content {
+      padding: var(--spacing-md);
+      
+      h3 {
+        font-size: 1rem;
+        margin-bottom: var(--spacing-sm);
+      }
+      
+      .certification-issuer {
+        font-size: 0.9rem;
+        margin-bottom: var(--spacing-xs);
+      }
+      
+      .certification-year {
+        font-size: 0.8rem;
+        padding: var(--spacing-xs) var(--spacing-sm);
+      }
+    }
+  }
+}

@@ -1,0 +1,80 @@
+.admin-experience {
+  .experience-list {
+    margin-bottom: 2rem;
+  }
+  
+  .experience-item {
+    background: #f8f9fa;
+    border: 1px solid #e9ecef;
+    border-radius: 8px;
+    padding: 1rem;
+    margin-bottom: 1rem;
+    
+    .experience-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 0.5rem;
+      
+      h4 {
+        margin: 0;
+        color: #333;
+      }
+      
+      .actions {
+        display: flex;
+        gap: 0.5rem;
+      }
+    }
+    
+    .company {
+      color: #666;
+      font-weight: 500;
+    }
+    
+    .period {
+      color: #888;
+      font-size: 0.9rem;
+    }
+  }
+  
+  .form-group {
+    margin-bottom: 1rem;
+    
+    label {
+      display: block;
+      margin-bottom: 0.25rem;
+      font-weight: 600;
+    }
+    
+    input, textarea {
+      width: 100%;
+      padding: 0.5rem;
+      border: 1px solid #ddd;
+      border-radius: 4px;
+    }
+  }
+  
+  .btn {
+    padding: 0.5rem 1rem;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    margin-right: 0.5rem;
+    
+    &.btn-primary {
+      background: #007bff;
+      color: white;
+    }
+    
+    &.btn-danger {
+      background: #dc3545;
+      color: white;
+    }
+    
+    &.btn-secondary {
+      background: #6c757d;
+      color: white;
+    }
+  }
+}

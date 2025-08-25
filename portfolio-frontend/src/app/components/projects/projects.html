@@ -1,0 +1,266 @@
+<section id="projects" class="projects">
+  <div class="container">
+    <div class="section-title">
+      <h2>Projects</h2>
+      <p>Innovative solutions in healthcare technology, cybersecurity, and assistive technology</p>
+    </div>
+    
+    <div class="projects-section">
+      <!-- Project Categories -->
+      <div class="project-categories">
+        <button 
+          class="category-btn active" 
+          (click)="selectedCategory = 'all'"
+          [class.active]="selectedCategory === 'all'">
+          All Projects
+        </button>
+        <button 
+          class="category-btn" 
+          (click)="selectedCategory = 'academic'"
+          [class.active]="selectedCategory === 'academic'">
+          Academic
+        </button>
+        <button 
+          class="category-btn" 
+          (click)="selectedCategory = 'personal'"
+          [class.active]="selectedCategory === 'personal'">
+          Personal
+        </button>
+        <button 
+          class="category-btn" 
+          (click)="selectedCategory = 'professional'"
+          [class.active]="selectedCategory === 'professional'">
+          Professional
+        </button>
+      </div>
+
+      <div class="projects-grid">
+        <!-- Academic Projects -->
+        <div 
+          *ngFor="let project of getProjectsByCategory('academic')" 
+          class="project-card"
+          (click)="openProjectDetail(project)"
+          [class]="'project-card ' + project.status">
+          
+          <div class="project-image">
+            <img 
+              [src]="project.image || 'assets/images/project-placeholder.jpg'" 
+              [alt]="project.name"
+              (error)="onImageError($event)">
+            <div class="project-overlay">
+              <div class="overlay-content">
+                <i class="fas fa-eye"></i>
+                <span>View Details</span>
+              </div>
+            </div>
+            <div class="project-status-badge" [class]="project.status">
+              {{ project.status | titlecase }}
+            </div>
+          </div>
+          
+          <div class="project-content">
+            <h3>{{ project.name }}</h3>
+            <p>{{ project.shortDescription }}</p>
+            
+            <div class="project-meta">
+              <span class="meta-item">
+                <i class="fas fa-calendar"></i>
+                {{ project.startDate | date:'MMM yyyy' }} - 
+                {{ project.endDate ? (project.endDate | date:'MMM yyyy') : 'Present' }}
+              </span>
+              <span *ngIf="project.role" class="meta-item">
+                <i class="fas fa-user"></i>
+                {{ project.role }}
+              </span>
+            </div>
+            
+            <div class="tech-tags">
+              <span 
+                *ngFor="let tech of project.technologies.slice(0, 4)" 
+                class="tech-tag">
+                {{ tech }}
+              </span>
+              <span *ngIf="project.technologies.length > 4" class="tech-tag more">
+                +{{ project.technologies.length - 4 }} more
+              </span>
+            </div>
+            
+            <div class="project-links">
+              <button 
+                *ngIf="project.links?.github" 
+                class="link-btn github"
+                (click)="$event.stopPropagation(); openGitHub(project)">
+                <i class="fab fa-github"></i>
+              </button>
+              <button 
+                *ngIf="project.links?.live" 
+                class="link-btn live"
+                (click)="$event.stopPropagation(); openLiveDemo(project)">
+                <i class="fas fa-external-link-alt"></i>
+              </button>
+              <button 
+                *ngIf="project.links?.demo" 
+                class="link-btn demo"
+                (click)="$event.stopPropagation(); openDemo(project)">
+                <i class="fas fa-play"></i>
+              </button>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Personal Projects -->
+        <div 
+          *ngFor="let project of getProjectsByCategory('personal')" 
+          class="project-card"
+          (click)="openProjectDetail(project)"
+          [class]="'project-card ' + project.status">
+          
+          <div class="project-image">
+            <img 
+              [src]="project.image || 'assets/images/project-placeholder.jpg'" 
+              [alt]="project.name"
+              (error)="onImageError($event)">
+            <div class="project-overlay">
+              <div class="overlay-content">
+                <i class="fas fa-eye"></i>
+                <span>View Details</span>
+              </div>
+            </div>
+            <div class="project-status-badge" [class]="project.status">
+              {{ project.status | titlecase }}
+            </div>
+          </div>
+          
+          <div class="project-content">
+            <h3>{{ project.name }}</h3>
+            <p>{{ project.shortDescription }}</p>
+            
+            <div class="project-meta">
+              <span class="meta-item">
+                <i class="fas fa-calendar"></i>
+                {{ project.startDate | date:'MMM yyyy' }} - 
+                {{ project.endDate ? (project.endDate | date:'MMM yyyy') : 'Present' }}
+              </span>
+              <span *ngIf="project.role" class="meta-item">
+                <i class="fas fa-user"></i>
+                {{ project.role }}
+              </span>
+            </div>
+            
+            <div class="tech-tags">
+              <span 
+                *ngFor="let tech of project.technologies.slice(0, 4)" 
+                class="tech-tag">
+                {{ tech }}
+              </span>
+              <span *ngIf="project.technologies.length > 4" class="tech-tag more">
+                +{{ project.technologies.length - 4 }} more
+              </span>
+            </div>
+            
+            <div class="project-links">
+              <button 
+                *ngIf="project.links?.github" 
+                class="link-btn github"
+                (click)="$event.stopPropagation(); openGitHub(project)">
+                <i class="fab fa-github"></i>
+              </button>
+              <button 
+                *ngIf="project.links?.live" 
+                class="link-btn live"
+                (click)="$event.stopPropagation(); openLiveDemo(project)">
+                <i class="fas fa-external-link-alt"></i>
+              </button>
+              <button 
+                *ngIf="project.links?.demo" 
+                class="link-btn demo"
+                (click)="$event.stopPropagation(); openDemo(project)">
+                <i class="fas fa-play"></i>
+              </button>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Professional Projects -->
+        <div 
+          *ngFor="let project of getProjectsByCategory('professional')" 
+          class="project-card"
+          (click)="openProjectDetail(project)"
+          [class]="'project-card ' + project.status">
+          
+          <div class="project-image">
+            <img 
+              [src]="project.image || 'assets/images/project-placeholder.jpg'" 
+              [alt]="project.name"
+              (error)="onImageError($event)">
+            <div class="project-overlay">
+              <div class="overlay-content">
+                <i class="fas fa-eye"></i>
+                <span>View Details</span>
+              </div>
+            </div>
+            <div class="project-status-badge" [class]="project.status">
+              {{ project.status | titlecase }}
+            </div>
+          </div>
+          
+          <div class="project-content">
+            <h3>{{ project.name }}</h3>
+            <p>{{ project.shortDescription }}</p>
+            
+            <div class="project-meta">
+              <span class="meta-item">
+                <i class="fas fa-calendar"></i>
+                {{ project.startDate | date:'MMM yyyy' }} - 
+                {{ project.endDate ? (project.endDate | date:'MMM yyyy') : 'Present' }}
+              </span>
+              <span *ngIf="project.role" class="meta-item">
+                <i class="fas fa-user"></i>
+                {{ project.role }}
+              </span>
+            </div>
+            
+            <div class="tech-tags">
+              <span 
+                *ngFor="let tech of project.technologies.slice(0, 4)" 
+                class="tech-tag">
+                {{ tech }}
+              </span>
+              <span *ngIf="project.technologies.length > 4" class="tech-tag more">
+                +{{ project.technologies.length - 4 }} more
+              </span>
+            </div>
+            
+            <div class="project-links">
+              <button 
+                *ngIf="project.links?.github" 
+                class="link-btn github"
+                (click)="$event.stopPropagation(); openGitHub(project)">
+                <i class="fab fa-github"></i>
+              </button>
+              <button 
+                *ngIf="project.links?.live" 
+                class="link-btn live"
+                (click)="$event.stopPropagation(); openLiveDemo(project)">
+                <i class="fas fa-external-link-alt"></i>
+              </button>
+              <button 
+                *ngIf="project.links?.demo" 
+                class="link-btn demo"
+                (click)="$event.stopPropagation(); openDemo(project)">
+                <i class="fas fa-play"></i>
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Project Detail Modal -->
+<app-project-detail-modal
+  *ngIf="showModal"
+  [project]="selectedProject"
+  (close)="closeProjectDetail()">
+</app-project-detail-modal>

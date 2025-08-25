@@ -1,0 +1,46 @@
+<div class="admin-profile">
+  <div class="page-header">
+    <h3>Manage Profile</h3>
+    <p>Update your personal information and professional details</p>
+  </div>
+
+  <div class="profile-form" *ngIf="profile">
+    <h4>Personal Information</h4>
+    
+    <div class="form-grid">
+      <div class="form-group">
+        <label for="profile-name">Full Name</label>
+        <input id="profile-name" [(ngModel)]="profile.name" class="form-control" placeholder="Your full name">
+      </div>
+      
+      <div class="form-group">
+        <label for="profile-title">Professional Title</label>
+        <input id="profile-title" [(ngModel)]="profile.title" class="form-control" placeholder="e.g., Software Engineer">
+      </div>
+      
+      <div class="form-group">
+        <label for="profile-email">Email Address</label>
+        <input id="profile-email" [(ngModel)]="profile.email" type="email" class="form-control" placeholder="your.email@example.com">
+      </div>
+      
+      <div class="form-group">
+        <label for="profile-phone">Phone Number</label>
+        <input id="profile-phone" [(ngModel)]="profile.phone" class="form-control" placeholder="+91 98765 43210">
+      </div>
+      
+      <div class="form-group">
+        <label for="profile-address">Address</label>
+        <input id="profile-address" [(ngModel)]="profile.address" class="form-control" placeholder="City, State, Country">
+      </div>
+      
+      <div class="form-group full-width">
+        <label for="profile-summary">Professional Summary</label>
+        <textarea id="profile-summary" [(ngModel)]="profile.summary" class="form-control" rows="4" placeholder="Write a brief professional summary..."></textarea>
+      </div>
+    </div>
+    
+    <div class="form-actions">
+      <button (click)="saveProfile()" class="btn btn-primary">Save Profile</button>
+    </div>
+  </div>
+</div>
