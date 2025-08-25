@@ -2,7 +2,7 @@
   # Build command for Angular project
   command = "npm run build"
   # Publish directory (where Angular builds the production files)
-  publish = "portfolio-frontend/dist/portfolio-frontend"
+  publish = "portfolio-frontend/dist/portfolio-frontend/browser"
   # Base directory (where the package.json with build script is located)
   base = "."
 
