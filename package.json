@@ -1,0 +1,19 @@
+{
+  "name": "manash-portfolio",
+  "version": "1.0.0",
+  "description": "Personal portfolio website for Manash Protim Deori",
+  "main": "index.js",
+  "scripts": {
+    "install-all": "npm install && cd backend && npm install && cd ../portfolio-frontend && npm install",
+    "build": "cd portfolio-frontend && ng build",
+    "start": "cd backend && npm start",
+    "dev": "concurrently \"cd backend && npm run dev\" \"cd portfolio-frontend && ng serve\"",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": ["portfolio", "angular", "nodejs", "express"],
+  "author": "Manash Protim Deori",
+  "license": "ISC",
+  "devDependencies": {
+    "concurrently": "^8.2.2"
+  }
+}
