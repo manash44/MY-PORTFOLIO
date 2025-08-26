@@ -43,14 +43,14 @@ let portfolioData = {
         name: 'Expense Budget Tracker (E.B.T)',
         description: 'Developed a user-friendly application for efficient expense budget tracking.',
         technologies: ['Java', 'MySQL', 'Swing'],
-        image: '/assets/images/ebt-project.jpg'
+        image: 'images/projects/expensebudgettracker.jpg'
       },
       {
         id: 2,
         name: 'CyberWatch: An Integrated Cybersecurity Suite',
         description: 'Spearheaded development of an application addressing cyber law-related issues.',
         technologies: ['Python', 'Cybersecurity', 'Network Security'],
-        image: '/assets/images/cyberwatch-project.jpg'
+        image: 'images/projects/cyberwatch.jpg'
       },
       {
         id: 3,
@@ -63,7 +63,7 @@ let portfolioData = {
           'Posture detection and correction'
         ],
         technologies: ['Python', 'Kivy', 'YOLOv3', 'coco.names', 'Text-to-Speech API'],
-        image: '/assets/images/visionaid-project.jpg'
+        image: 'images/projects/visionaidai.jpg'
       }
     ],
     personal: [
@@ -72,21 +72,21 @@ let portfolioData = {
         name: 'Telemedicine Platform',
         description: 'A comprehensive telemedicine solution for remote healthcare consultations.',
         technologies: ['React.js', 'Node.js', 'WebRTC', 'MongoDB'],
-        image: '/assets/images/telemedicine-project.jpg'
+        image: 'images/projects/telemedcineplatform.jpg'
       },
       {
         id: 5,
         name: 'Medical Device Integration Platform',
         description: 'Platform for integrating various medical devices and healthcare data analytics.',
         technologies: ['Python', 'IoT', 'Data Analytics', 'Healthcare APIs'],
-        image: '/assets/images/medical-device-project.jpg'
+        image: 'images/projects/healthcareanalyticai.jpg'
       },
       {
         id: 6,
         name: 'AI Healthcare Analytics',
         description: 'AI-powered healthcare data analytics platform for predictive insights.',
         technologies: ['Python', 'Machine Learning', 'Power BI', 'SQL'],
-        image: '/assets/images/ai-healthcare-project.jpg'
+        image: 'images/projects/healthcareanalyticai.jpg'
       }
     ]
   },

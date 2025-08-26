@@ -27,6 +27,7 @@ export class ProjectsComponent implements OnInit {
     this.portfolioService.getProjects().subscribe({
       next: (data) => {
         this.projects = data;
+        console.log('Projects loaded:', this.projects);
       },
       error: (error) => {
         console.error('Error loading projects:', error);
@@ -38,6 +39,7 @@ export class ProjectsComponent implements OnInit {
 
   loadFallbackProjects() {
     // Fallback project data with enhanced structure
+    console.log('Loading fallback projects...');
     this.projects = {
       academic: [
         {
@@ -266,6 +268,7 @@ export class ProjectsComponent implements OnInit {
 
   onImageError(event: any) {
     // Fallback to placeholder image if project image fails to load
+    console.log('Image failed to load:', event.target.src);
     event.target.src = 'images/project-placeholder.jpg';
   }
 
