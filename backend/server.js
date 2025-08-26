@@ -94,14 +94,26 @@ let portfolioData = {
     programming: [
       { name: 'C++', level: 85 },
       { name: 'Java', level: 90 },
-      { name: 'Python', level: 95 }
+      { name: 'Python', level: 95 },
+      { name: 'Kotlin', level: 85 },
+      { name: 'Dart', level: 80 }
     ],
     webDevelopment: [
       { name: 'HTML/CSS', level: 90 },
       { name: 'JavaScript', level: 85 },
       { name: 'JSP/Servlet', level: 80 },
       { name: '.NET', level: 75 },
-      { name: 'React.js', level: 85 }
+      { name: 'React.js', level: 85 },
+      { name: 'Node.js', level: 80 },
+      { name: 'Express.js', level: 75 }
+    ],
+    mobileDevelopment: [
+      { name: 'Flutter', level: 85 },
+      { name: 'Android Development', level: 80 },
+      { name: 'Kotlin', level: 85 },
+      { name: 'Java (Android)', level: 90 },
+      { name: 'Dart', level: 80 },
+      { name: 'Mobile UI/UX', level: 75 }
     ],
     database: [
       { name: 'MySQL', level: 90 },

@@ -26,6 +26,7 @@ export class SkillsComponent {
   skillCategories = [
     { id: 'programming', name: 'Programming Languages', icon: 'fas fa-code' },
     { id: 'web', name: 'Web Development', icon: 'fas fa-globe' },
+    { id: 'mobile', name: 'Mobile Development', icon: 'fas fa-mobile-alt' },
     { id: 'database', name: 'Database Technologies', icon: 'fas fa-database' },
     { id: 'data', name: 'Data Analysis & Visualization', icon: 'fas fa-chart-bar' },
     { id: 'design', name: 'UI/UX Design', icon: 'fas fa-palette' },
@@ -61,6 +62,24 @@ export class SkillsComponent {
       experience: '4+ years',
       projects: ['VisionAid App', 'Healthcare Analytics', 'AI/ML Solutions'],
       icon: 'fab fa-python'
+    },
+    {
+      name: 'Kotlin',
+      level: 85,
+      category: 'programming',
+      description: 'Proficient in Kotlin programming language for Android development and modern application development.',
+      experience: '2+ years',
+      projects: ['Android Apps', 'CyberWatch Suite', 'Mobile Development'],
+      icon: 'fab fa-kotlin'
+    },
+    {
+      name: 'Dart',
+      level: 80,
+      category: 'programming',
+      description: 'Strong Dart programming skills for Flutter development and cross-platform mobile applications.',
+      experience: '2+ years',
+      projects: ['Flutter Apps', 'Telemedicine Platform', 'Cross-platform Development'],
+      icon: 'fas fa-code'
     },
 
     // Web Development
@@ -108,6 +127,80 @@ export class SkillsComponent {
       experience: '2+ years',
       projects: ['Web Applications', 'Enterprise Solutions'],
       icon: 'fab fa-microsoft'
+    },
+    {
+      name: 'Node.js',
+      level: 75,
+      category: 'web',
+      description: 'Experience with Node.js for server-side JavaScript development and backend services.',
+      experience: '2+ years',
+      projects: ['Backend Services', 'API Development', 'Server-side Applications'],
+      icon: 'fab fa-node-js'
+    },
+    {
+      name: 'Express.js',
+      level: 70,
+      category: 'web',
+      description: 'Proficient in Express.js framework for building RESTful APIs and web applications.',
+      experience: '2+ years',
+      projects: ['API Development', 'Backend Services', 'Web Applications'],
+      icon: 'fas fa-server'
+    },
+
+    // Mobile Development
+    {
+      name: 'Flutter',
+      level: 85,
+      category: 'mobile',
+      description: 'Expert in Flutter framework for cross-platform mobile app development with Dart.',
+      experience: '3+ years',
+      projects: ['Telemedicine Platform', 'Cross-platform Apps', 'Mobile Solutions'],
+      icon: 'fab fa-flutter'
+    },
+    {
+      name: 'Android Development',
+      level: 80,
+      category: 'mobile',
+      description: 'Strong Android development skills using Java and Kotlin for native mobile applications.',
+      experience: '3+ years',
+      projects: ['Android Apps', 'Mobile Solutions', 'Native Development'],
+      icon: 'fab fa-android'
+    },
+    {
+      name: 'Kotlin',
+      level: 85,
+      category: 'mobile',
+      description: 'Proficient in Kotlin for Android development with modern programming practices.',
+      experience: '2+ years',
+      projects: ['Android Apps', 'Mobile Development', 'Modern Android'],
+      icon: 'fab fa-kotlin'
+    },
+    {
+      name: 'Java (Android)',
+      level: 90,
+      category: 'mobile',
+      description: 'Expert in Java for Android development with extensive experience in mobile app architecture.',
+      experience: '4+ years',
+      projects: ['Android Applications', 'Mobile Solutions', 'App Architecture'],
+      icon: 'fab fa-java'
+    },
+    {
+      name: 'Dart',
+      level: 80,
+      category: 'mobile',
+      description: 'Strong Dart programming skills for Flutter development and cross-platform applications.',
+      experience: '2+ years',
+      projects: ['Flutter Apps', 'Cross-platform Development', 'Mobile Solutions'],
+      icon: 'fas fa-code'
+    },
+    {
+      name: 'Mobile UI/UX',
+      level: 75,
+      category: 'mobile',
+      description: 'Experience in mobile UI/UX design principles and best practices for mobile applications.',
+      experience: '2+ years',
+      projects: ['Mobile App Design', 'User Experience', 'Interface Design'],
+      icon: 'fas fa-mobile-alt'
     },
 
     // Database Technologies
