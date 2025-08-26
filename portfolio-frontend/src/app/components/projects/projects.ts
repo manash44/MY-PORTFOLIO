@@ -197,36 +197,37 @@ export class ProjectsComponent implements OnInit {
         },
         {
           id: 5,
-          name: 'Pulmonary Assessment Device',
-          shortDescription: 'Medical device for pulmonary patient assessment through lung function testing.',
-          longDescription: 'A sophisticated medical device that combines hardware sensors with AI-powered software for comprehensive pulmonary assessment. The device measures various lung function parameters and provides detailed analysis for healthcare professionals. It includes features for patient data management, trend analysis, and integration with hospital systems.',
-          technologies: ['C++', 'Python', 'Hardware Integration', 'AI/ML', 'Medical Devices'],
-          image: 'assets/images/projects/pulmonary.jpg',
+          name: 'Medical Device Integration Platform',
+          shortDescription: 'A comprehensive platform for integrating various medical devices and healthcare data analytics.',
+          longDescription: 'A sophisticated platform that enables seamless integration of various medical devices and healthcare data analytics. The system provides real-time monitoring, data collection, and analysis capabilities for healthcare professionals. It includes features for device management, data visualization, automated reporting, and integration with hospital information systems.',
+          technologies: ['Python', 'IoT', 'Data Analytics', 'Healthcare APIs', 'Device Integration', 'Real-time Monitoring'],
+          image: 'images/projects/Medical Device Integration Platform.jpg',
           features: [
-            'Lung function testing',
-            'Parameter evaluation',
-            'AI-powered diagnostics',
-            'Hardware integration',
-            'Clinical data analysis',
-            'Patient data management',
-            'Trend analysis and reporting'
+            'Medical device integration',
+            'Real-time data monitoring',
+            'Healthcare data analytics',
+            'Device management system',
+            'Data visualization',
+            'Automated reporting',
+            'Hospital system integration'
           ],
           softwareSpecifications: [
-            'Real-time sensor data processing',
-            'AI model for diagnostic assistance',
-            'Secure patient data storage',
-            'Integration with hospital systems',
-            'Calibration and maintenance tools',
-            'Multi-language support'
+            'Python 3.8+ runtime environment',
+            'IoT device connectivity',
+            'Real-time data processing',
+            'Secure data transmission',
+            'API integration capabilities',
+            'Multi-device support',
+            'Scalable architecture'
           ],
           links: {
-            github: 'https://github.com/manash/pulmonary-device',
-            documentation: 'https://pulmonary-device-docs.com'
+            github: 'https://github.com/manash/medical-device-platform',
+            documentation: 'https://medical-device-platform-docs.com'
           },
           category: 'professional',
           status: 'completed',
-          startDate: '2022-01-01',
-          endDate: '2022-12-31',
+          startDate: '2023-01-01',
+          endDate: '2023-12-31',
           teamSize: 1,
           role: 'Solo Developer'
         },

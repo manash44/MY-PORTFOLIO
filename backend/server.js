@@ -77,9 +77,9 @@ let portfolioData = {
       {
         id: 5,
         name: 'Medical Device Integration Platform',
-        description: 'Platform for integrating various medical devices and healthcare data analytics.',
-        technologies: ['Python', 'IoT', 'Data Analytics', 'Healthcare APIs'],
-        image: 'images/projects/healthcareanalyticai.jpg'
+        description: 'A comprehensive platform for integrating various medical devices and healthcare data analytics, enabling seamless data flow and real-time monitoring.',
+        technologies: ['Python', 'IoT', 'Data Analytics', 'Healthcare APIs', 'Device Integration', 'Real-time Monitoring'],
+        image: 'images/projects/Medical Device Integration Platform.jpg'
       },
       {
         id: 6,
