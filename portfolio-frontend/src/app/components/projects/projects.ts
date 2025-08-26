@@ -46,7 +46,7 @@ export class ProjectsComponent implements OnInit {
           shortDescription: 'A user-friendly application for efficient expense budget tracking.',
           longDescription: 'E.B.T is a comprehensive financial management application that helps users track expenses, set budgets, and generate detailed financial reports. The application features intuitive data visualization, expense categorization, and export capabilities. It provides insights into spending patterns and helps users achieve their financial goals.',
           technologies: ['C++', 'Qt Framework', 'SQLite', 'Data Analysis', 'Financial Management'],
-          image: 'assets/images/projects/ebt.jpg',
+          image: 'images/projects/expensebudgettracker.jpg',
           features: [
             'Expense categorization',
             'Budget setting and monitoring',
@@ -81,7 +81,7 @@ export class ProjectsComponent implements OnInit {
           shortDescription: 'A comprehensive cybersecurity application addressing cyber law-related issues.',
           longDescription: 'CyberWatch is a comprehensive cybersecurity suite designed to address modern cyber threats and legal compliance requirements. The application provides real-time threat detection, security assessment tools, and educational resources for understanding cybersecurity best practices. It includes modules for incident response, legal compliance guidelines, and security awareness training.',
           technologies: ['Java', 'Spring Boot', 'MySQL', 'Cybersecurity', 'Web Security', 'Legal Compliance'],
-          image: 'assets/images/projects/cyberwatch.jpg',
+          image: 'images/projects/cyberwatch.jpg',
           features: [
             'Cybersecurity threat detection',
             'Legal compliance guidelines',
@@ -119,7 +119,7 @@ export class ProjectsComponent implements OnInit {
           shortDescription: 'An innovative Android application designed to assist visually impaired individuals.',
           longDescription: 'VisionAid is a comprehensive Android application that leverages cutting-edge computer vision technology to assist visually impaired individuals in their daily activities. The app uses YOLOv3 object detection to identify objects in real-time, provides audio feedback through text-to-speech, and offers haptic feedback for tactile interaction. It also includes posture detection capabilities to help users maintain proper posture during extended use.',
           technologies: ['Python', 'Kivy', 'YOLOv3', 'Android', 'Text-to-Speech API', 'Computer Vision'],
-          image: 'assets/images/projects/visionaid.jpg',
+          image: 'images/projects/visionaidai.jpg',
           features: [
             'Real-time object detection using YOLOv3',
             'Text-to-speech audio feedback',
@@ -157,7 +157,7 @@ export class ProjectsComponent implements OnInit {
           shortDescription: 'A comprehensive telemedicine platform for patient online/offline consultation and lab test booking.',
           longDescription: 'A full-featured telemedicine platform that enables virtual consultations, patient monitoring, and healthcare analytics. The platform includes video conferencing, electronic health records, appointment scheduling, secure messaging, and lab test booking functionality. It provides healthcare providers with tools for remote patient care and analytics for improving patient outcomes. The system supports both online and offline consultation modes with comprehensive reporting capabilities.',
           technologies: ['React.js', 'Node.js', 'Python', 'WebRTC', 'Healthcare', 'Telemedicine', 'Lab Integration'],
-          image: 'assets/images/projects/telemedicine.jpg',
+          image: 'images/projects/telemedcineplatform.jpg',
           features: [
             'Virtual consultations (online/offline)',
             'Lab test booking and management',
@@ -231,7 +231,7 @@ export class ProjectsComponent implements OnInit {
           shortDescription: 'Healthcare reporting apps and portals for clinical data visualization and analytics.',
           longDescription: 'A comprehensive healthcare analytics platform that provides clinical data visualization, performance reporting, and real-time monitoring capabilities. The platform helps healthcare providers and administrators make data-driven decisions to improve patient outcomes and operational efficiency. It includes customizable dashboards, automated reporting features, and predictive analytics for healthcare insights.',
           technologies: ['Power BI', 'MySQL', 'Python', 'Data Visualization', 'Healthcare Analytics'],
-          image: 'assets/images/projects/healthcare-analytics.jpg',
+          image: 'images/projects/healthcareanalyticai.jpg',
           features: [
             'Clinical data visualization',
             'Healthcare analytics',
@@ -266,7 +266,7 @@ export class ProjectsComponent implements OnInit {
 
   onImageError(event: any) {
     // Fallback to placeholder image if project image fails to load
-    event.target.src = 'assets/images/project-placeholder.jpg';
+    event.target.src = 'images/project-placeholder.jpg';
   }
 
   openGitHub(project: Project) {

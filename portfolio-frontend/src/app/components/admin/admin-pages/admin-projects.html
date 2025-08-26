@@ -125,7 +125,7 @@
     <div class="projects-grid">
       <div *ngFor="let project of (activeTab === 'academic' ? projects?.academic : projects?.personal); let i = index" class="project-card">
         <div class="project-image">
-          <img [src]="project.image || '/assets/images/project-placeholder.jpg'" [alt]="project.name">
+          <img [src]="project.image || '/images/project-placeholder.jpg'" [alt]="project.name">
           <div class="project-status" [class]="project.status">
             {{ project.status | titlecase }}
           </div>
