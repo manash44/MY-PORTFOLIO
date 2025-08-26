@@ -48,21 +48,21 @@ let portfolioData = {
       {
         id: 2,
         name: 'CyberWatch: An Integrated Cybersecurity Suite',
-        description: 'Spearheaded development of an application addressing cyber law-related issues.',
-        technologies: ['Python', 'Cybersecurity', 'Network Security'],
+        description: 'Spearheaded development of a Java-based Kotlin application addressing cyber law-related issues.',
+        technologies: ['Java', 'Kotlin', 'Cybersecurity', 'Network Security'],
         image: 'images/projects/cyberwatch.jpg'
       },
       {
         id: 3,
         name: 'VisionAid App',
-        description: 'Developed an Android app using Kivy to assist visually impaired individuals with object detection (YOLOv3), text-to-speech feedback, haptic feedback, and posture detection.',
+        description: 'Developed a Python GUI application to assist visually impaired individuals with object detection (YOLOv3), text-to-speech feedback, haptic feedback, and posture detection.',
         features: [
           'Object detection using YOLOv3',
           'Text-to-speech functionality',
           'Haptic feedback system',
           'Posture detection and correction'
         ],
-        technologies: ['Python', 'Kivy', 'YOLOv3', 'coco.names', 'Text-to-Speech API'],
+        technologies: ['Python', 'GUI', 'YOLOv3', 'Computer Vision', 'Text-to-Speech API'],
         image: 'images/projects/visionaidai.jpg'
       }
     ],
@@ -70,8 +70,8 @@ let portfolioData = {
       {
         id: 4,
         name: 'Telemedicine Platform',
-        description: 'A comprehensive telemedicine solution for remote healthcare consultations.',
-        technologies: ['React.js', 'Node.js', 'WebRTC', 'MongoDB'],
+        description: 'A comprehensive telemedicine solution built using Flutter and Python for remote healthcare consultations.',
+        technologies: ['Flutter', 'Python', 'Dart', 'Healthcare APIs', 'Mobile Development'],
         image: 'images/projects/telemedcineplatform.jpg'
       },
       {

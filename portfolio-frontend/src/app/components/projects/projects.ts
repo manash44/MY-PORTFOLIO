@@ -80,9 +80,9 @@ export class ProjectsComponent implements OnInit {
         {
           id: 2,
           name: 'CyberWatch - Integrated Cybersecurity Suite',
-          shortDescription: 'A comprehensive cybersecurity application addressing cyber law-related issues.',
-          longDescription: 'CyberWatch is a comprehensive cybersecurity suite designed to address modern cyber threats and legal compliance requirements. The application provides real-time threat detection, security assessment tools, and educational resources for understanding cybersecurity best practices. It includes modules for incident response, legal compliance guidelines, and security awareness training.',
-          technologies: ['Java', 'Spring Boot', 'MySQL', 'Cybersecurity', 'Web Security', 'Legal Compliance'],
+          shortDescription: 'A comprehensive Java-based Kotlin cybersecurity application addressing cyber law-related issues.',
+          longDescription: 'CyberWatch is a comprehensive cybersecurity suite built with Java and Kotlin, designed to address modern cyber threats and legal compliance requirements. The application provides real-time threat detection, security assessment tools, and educational resources for understanding cybersecurity best practices. It includes modules for incident response, legal compliance guidelines, and security awareness training.',
+          technologies: ['Java', 'Kotlin', 'Spring Boot', 'MySQL', 'Cybersecurity', 'Web Security', 'Legal Compliance'],
           image: 'images/projects/cyberwatch.jpg',
           features: [
             'Cybersecurity threat detection',
@@ -95,6 +95,7 @@ export class ProjectsComponent implements OnInit {
           ],
           softwareSpecifications: [
             'Java 11+ runtime environment',
+            'Kotlin 1.5+',
             'MySQL 8.0+ database',
             'Minimum 4GB RAM',
             'SSL/TLS encryption support',
@@ -118,9 +119,9 @@ export class ProjectsComponent implements OnInit {
         {
           id: 3,
           name: 'VisionAid App',
-          shortDescription: 'An innovative Android application designed to assist visually impaired individuals.',
-          longDescription: 'VisionAid is a comprehensive Android application that leverages cutting-edge computer vision technology to assist visually impaired individuals in their daily activities. The app uses YOLOv3 object detection to identify objects in real-time, provides audio feedback through text-to-speech, and offers haptic feedback for tactile interaction. It also includes posture detection capabilities to help users maintain proper posture during extended use.',
-          technologies: ['Python', 'Kivy', 'YOLOv3', 'Android', 'Text-to-Speech API', 'Computer Vision'],
+          shortDescription: 'An innovative Python GUI application designed to assist visually impaired individuals.',
+          longDescription: 'VisionAid is a comprehensive Python GUI application that leverages cutting-edge computer vision technology to assist visually impaired individuals in their daily activities. The application uses YOLOv3 object detection to identify objects in real-time, provides audio feedback through text-to-speech, and offers haptic feedback for tactile interaction. It also includes posture detection capabilities to help users maintain proper posture during extended use.',
+          technologies: ['Python', 'GUI', 'YOLOv3', 'Computer Vision', 'Text-to-Speech API', 'Object Detection'],
           image: 'images/projects/visionaidai.jpg',
           features: [
             'Real-time object detection using YOLOv3',
@@ -132,12 +133,13 @@ export class ProjectsComponent implements OnInit {
             'Customizable sensitivity settings'
           ],
           softwareSpecifications: [
-            'Android 8.0+ compatibility',
-            'Minimum 3GB RAM requirement',
+            'Python 3.8+ runtime environment',
+            'GUI framework compatibility',
+            'Minimum 4GB RAM requirement',
             'Camera access for object detection',
             'Microphone access for voice commands',
-            'Vibration motor for haptic feedback',
-            'GPS for location-based features'
+            'Computer vision libraries',
+            'Cross-platform compatibility'
           ],
           links: {
             github: 'https://github.com/manash/visionaid-app',
@@ -156,9 +158,9 @@ export class ProjectsComponent implements OnInit {
         {
           id: 4,
           name: 'Telemedicine Platform',
-          shortDescription: 'A comprehensive telemedicine platform for patient online/offline consultation and lab test booking.',
-          longDescription: 'A full-featured telemedicine platform that enables virtual consultations, patient monitoring, and healthcare analytics. The platform includes video conferencing, electronic health records, appointment scheduling, secure messaging, and lab test booking functionality. It provides healthcare providers with tools for remote patient care and analytics for improving patient outcomes. The system supports both online and offline consultation modes with comprehensive reporting capabilities.',
-          technologies: ['React.js', 'Node.js', 'Python', 'WebRTC', 'Healthcare', 'Telemedicine', 'Lab Integration'],
+          shortDescription: 'A comprehensive Flutter and Python telemedicine platform for patient online/offline consultation and lab test booking.',
+          longDescription: 'A full-featured telemedicine platform built with Flutter and Python that enables virtual consultations, patient monitoring, and healthcare analytics. The platform includes video conferencing, electronic health records, appointment scheduling, secure messaging, and lab test booking functionality. It provides healthcare providers with tools for remote patient care and analytics for improving patient outcomes. The system supports both online and offline consultation modes with comprehensive reporting capabilities.',
+          technologies: ['Flutter', 'Python', 'Dart', 'Healthcare APIs', 'Mobile Development', 'Telemedicine', 'Lab Integration'],
           image: 'images/projects/telemedcineplatform.jpg',
           features: [
             'Virtual consultations (online/offline)',
@@ -172,11 +174,12 @@ export class ProjectsComponent implements OnInit {
             'Comprehensive reporting system'
           ],
           softwareSpecifications: [
+            'Flutter 3.0+ framework',
+            'Python 3.8+ backend',
+            'Dart programming language',
+            'Cross-platform mobile support',
             'HIPAA compliant data storage',
-            'WebRTC for video calls',
             'Real-time messaging system',
-            'Mobile responsive design',
-            'Multi-platform support',
             'Integration with EHR systems',
             'Lab management integration'
           ],
